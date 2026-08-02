@@ -1,0 +1,19 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tropeai/trope-cua
+notes: >-
+  Trope publishes no client SDK libraries on public package registries
+  (npm registry.npmjs.org/trope-cua 404, PyPI pypi.org/pypi/trope-cua 404,
+  checked 2026-07-21). Its one first-party developer package, the Trope CUA
+  computer-use agent/CLI, is deliberately distributed as source from GitHub
+  (README: "Trope CUA is distributed as source") and built locally with
+  platform installer scripts.
+packages:
+- name: trope-cua
+  registry: github-source
+  url: https://github.com/tropeai/trope-cua
+  languages: [swift, csharp, python]
+  license: MIT
+  kind: cli-and-mcp-server
+  install: 'Windows: .\scripts\install-windows.ps1 -SelfContained | macOS: ./scripts/install-macos.sh'
+  official: true

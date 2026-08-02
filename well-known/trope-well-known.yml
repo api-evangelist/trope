@@ -1,0 +1,20 @@
+generated: '2026-07-21'
+method: searched
+host: https://trope.ai
+notes: >-
+  No /.well-known/ discovery documents are published on trope.ai (all probed
+  paths returned 404 on 2026-07-21). The provider does publish /llms.txt at
+  the site root (saved to llms/trope-llms.txt). api.trope.ai answers with a
+  JSON {"message":"Not Found"} for all probed paths, including
+  /.well-known/security.txt.
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /.well-known/oauth-authorization-server
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404

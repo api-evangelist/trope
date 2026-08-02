@@ -1,0 +1,21 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+url: https://trust.trope.ai/
+certifications: []
+notes: >-
+  trust.trope.ai serves a live page titled "Trust center" (HTTP 200,
+  2026-07-21), but it is a client-rendered React SPA and no certification
+  or framework claims could be verified server-side — certifications is
+  honestly empty, so no Compliance pointer is emitted. Trope also publishes
+  a subprocessors page at https://trope.ai/subprocessors listing Amazon Web
+  Services, Anthropic, Cloudflare, OpenAI, and Vercel.
+subprocessors_page: https://trope.ai/subprocessors
+subprocessors: [Amazon Web Services, Anthropic, Cloudflare, OpenAI, Vercel]
+evidence:
+- source: https://trust.trope.ai/
+  kind: page
+  detail: HTTP 200, <title>Trust center</title>; SPA body not extractable without JS
+- source: https://trope.ai/subprocessors
+  kind: page
+  detail: HTTP 200, subprocessor vendor names present in HTML

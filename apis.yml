@@ -1,7 +1,24 @@
 aid: trope
 name: Trope
-description: Trope is a company surfaced as a portfolio company of y-combinator and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: Trope is an AI-native platform that helps ERP implementation partners
+  deliver successful implementations faster, deploying AI agents across discovery,
+  requirements, fit-gap analysis, data migration, approval workflows, UAT scripts,
+  training guides, documentation, and go-live readiness — built for Microsoft Dynamics
+  365 Business Central consultancies and other implementation teams. Trope also maintains
+  Trope CUA, an open-source MCP-native computer-use agent for background desktop
+  automation on Windows and macOS. Y Combinator Summer 2026 batch, based in San Francisco.
+accessModel:
+  pricing: unknown
+  onboarding: unknown
+  trial: false
+  try_now: false
+  public: false
+  label: Unknown
+  confidence: low
+  source: []
+  generated: '2026-07-22'
+  method: derived
+image: https://trope.ai/images/og-image-trope-preview.png
 url: https://raw.githubusercontent.com/api-evangelist/trope/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,12 +28,57 @@ x-tier: stub
 x-tier-reason: portfolio-lead
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
 tags:
 - Company
+- Artificial Intelligence
+- Agents
+- ERP
+- Enterprise Software
+- Computer Use
+- MCP
+- Automation
 apis: []
+common:
+- type: DomainSecurity
+  url: security/trope-domain-security.yml
+- type: MCPServer
+  url: mcp/trope-mcp.yml
+- type: LLMsTxt
+  url: llms/trope-llms.txt
+- type: CLI
+  url: cli/trope-cli.yml
+- type: Packages
+  url: packages/trope-packages.yml
+- type: ChangeLog
+  url: changelog/trope-changelog.yml
+- type: TrustCenter
+  url: security/trope-trust-center.yml
+- type: Website
+  url: https://trope.ai
+- type: Login
+  url: https://trope.ai/signin
+- type: TermsOfService
+  url: https://trope.ai/terms
+- type: PrivacyPolicy
+  url: https://trope.ai/privacy
+- type: Support
+  url: mailto:founders@trope.ai
+- type: Blog
+  url: https://trope.ai/resources
+- type: GitHubOrganization
+  url: https://github.com/tropeai
+- type: Twitter
+  url: https://x.com/trope_ai
+- type: LinkedIn
+  url: https://www.linkedin.com/company/tropeai
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 8
+  pass: local-v1

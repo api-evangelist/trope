@@ -1,0 +1,28 @@
+# Trope
+
+> Trope is the AI-native platform that helps ERP implementation partners deliver successful implementations faster.
+
+Trope is built for ERP implementation partners — including Microsoft Dynamics 365 Business Central consultancies — and handles the delivery work that erodes margins: discovery, requirements, fit-gap analysis, data migration, approval workflows, UAT scripts, training guides, documentation, and go-live readiness, in one connected system.
+
+## Primary pages
+
+- Homepage: https://trope.ai/
+- Getting started (how Trope engagements run): https://trope.ai/process
+- Trope CUA (open-source computer-use agent): https://trope.ai/cua
+- Get a demo: https://trope.ai/get-demo
+
+## Resources
+
+- Resources index: https://trope.ai/resources
+- The autonomous enterprise is coming. Most ERP teams are not ready: https://trope.ai/resources/autonomous-enterprise-erp-testing
+- How would AI help our bottom line?: https://trope.ai/resources/how-ai-helps-your-bottom-line
+
+## Legal
+
+- Privacy policy: https://trope.ai/privacy
+- Terms of service: https://trope.ai/terms
+- Subprocessors: https://trope.ai/subprocessors
+
+## Contact
+
+- Sales and support: mailto:founders@trope.ai

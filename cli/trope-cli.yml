@@ -1,0 +1,62 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tropeai/trope-cua
+docs: https://github.com/tropeai/trope-cua/blob/main/docs/reference-tools.md
+name: trope-cua
+description: >-
+  First-party open-source (MIT) CLI for Trope CUA, Trope's background
+  computer-use driver for desktop agents on Windows and macOS. The same
+  binary runs as a direct CLI tool, an MCP stdio server, or a long-running
+  daemon (named pipe on Windows, Unix domain socket on macOS). Distributed
+  as source — no package-registry install; build locally with the installer
+  scripts. Direct CLI calls suit stateless read-only checks and simple
+  actions; MCP or the daemon keep element indexes from get_window_state
+  valid across subsequent actions.
+install:
+- platform: windows
+  requirements: Windows 10 1903+ or Windows 11, PowerShell, .NET SDK matching global.json
+  command: .\scripts\install-windows.ps1 -SelfContained
+- platform: macos
+  requirements: macOS 14+, Xcode Command Line Tools, Accessibility and Screen Recording permissions for TropeCUA.app
+  command: ./scripts/install-macos.sh
+verify:
+- trope-cua --help
+- trope-cua check_permissions
+- trope-cua list_windows
+command_modes:
+- command: trope-cua <tool> [json]
+  purpose: Direct CLI tool call.
+- command: trope-cua mcp
+  purpose: Run as an MCP stdio server.
+- command: trope-cua serve [--instance <id>]
+  purpose: Run the long-running daemon.
+- command: trope-cua call [--instance <id>] <tool> [json]
+  purpose: Call a tool on a running daemon instance.
+- command: trope-cua status [--instance <id>]
+  purpose: Daemon instance status.
+- command: trope-cua daemon-list
+  purpose: List running daemon instances.
+- command: trope-cua stop [--instance <id>|--all]
+  purpose: Stop daemon instances.
+- command: trope-cua mcp-config [--client <name>]
+  purpose: Emit MCP client registration config (e.g. --client cursor).
+- command: trope-cua config [show|get|set|reset]
+  purpose: Inspect and set persistent config.
+- command: trope-cua recording [start|stop|status]
+  purpose: Control trajectory recording.
+command_groups:
+- group: discovery-and-state
+  tools: [list_apps, list_windows, get_window_state, get_accessibility_tree, screenshot, zoom, get_screen_size, get_cursor_position]
+- group: input-and-values
+  tools: [click, double_click, right_click, type_text, type_text_chars, press_key, hotkey, scroll, set_value]
+- group: browser-and-hard-case-lanes
+  tools: [browser_eval, page, drag, child_session_start, child_session_status, child_session_stop, appbroadcast_input_probe]
+- group: cursor-recording-config
+  tools: [move_cursor, get_agent_cursor_state, set_agent_cursor_enabled, set_agent_cursor_motion, set_recording, get_recording_state, replay_trajectory, get_config, set_config, check_permissions]
+config_keys:
+- capture_mode
+- max_image_dimension
+- chromium_debugging_port
+- allow_parent_sendinput
+- agent_cursor.enabled
+- agent_cursor.motion.*

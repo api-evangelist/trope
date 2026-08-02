@@ -1,0 +1,25 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/tropeai/trope-cua/releases
+notes: >-
+  Trope publishes no dated changelog for its hosted ERP-implementation
+  platform. The only public release history is the GitHub releases feed for
+  Trope CUA, its open-source computer-use agent; captured below.
+scheme: semver (pre-1.0 source previews)
+current_version: v0.1.0-source-preview
+entries:
+- version: v0.1.0-source-preview
+  date: '2026-04-28'
+  title: Trope CUA v0.1.0 Source Preview
+  url: https://github.com/tropeai/trope-cua/releases/tag/v0.1.0-source-preview
+  breaking: false
+  highlights:
+  - Windows desktop app/window discovery
+  - Target-window snapshots with screenshots and accessibility trees
+  - Click, type, key, scroll, and value actions where safe routes are available
+  - MCP stdio server
+  - Daemon mode with persistent element caches
+  - Visual overlay cursor
+  - Action receipts for cursor/focus/background-safety checks
+  - Trajectory recording and replay
+  - macOS Swift driver source under native/macos/trope-cua

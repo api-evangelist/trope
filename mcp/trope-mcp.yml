@@ -1,0 +1,96 @@
+generated: '2026-07-21'
+method: searched
+status: published
+source: https://github.com/tropeai/trope-cua
+docs: https://github.com/tropeai/trope-cua/blob/main/docs/reference-tools.md
+description: >-
+  Trope publishes Trope CUA, an open-source (MIT) MCP-native computer-use
+  agent for background desktop automation on Windows and macOS. It exposes
+  target-window screenshots, accessibility trees, action receipts, and
+  trajectory recording over an MCP stdio server, a long-running daemon, or
+  direct CLI calls. Distributed as source (no registry package); install via
+  the repository's platform installer scripts, then register with any MCP
+  client via `trope-cua mcp-config` or point the client at `trope-cua mcp`.
+  Mutating tools return structured action receipts with background_safe,
+  cursor_moved, and foreground_changed fields. Tool list captured verbatim
+  from docs/reference-tools.md. There is no hosted/remote MCP server for the
+  Trope ERP-implementation platform itself.
+server:
+  name: trope-cua
+  transport: stdio
+  command: trope-cua mcp
+  source: https://github.com/tropeai/trope-cua
+  license: MIT
+  install:
+    windows: .\scripts\install-windows.ps1 -SelfContained
+    macos: ./scripts/install-macos.sh
+  client_config: trope-cua mcp-config [--client <name>]
+tools:
+- name: list_apps
+  description: List installed and running apps.
+- name: list_windows
+  description: List top-level windows with pid, title, class, bounds, visibility, and z-order.
+- name: get_window_state
+  description: Return a screenshot and/or UIA tree with element_index tags.
+- name: get_accessibility_tree
+  description: Alias of get_window_state in ax mode for one call.
+- name: screenshot
+  description: Capture the virtual desktop or one target window.
+- name: zoom
+  description: Capture a native-resolution crop from the last target-window screenshot.
+- name: get_screen_size
+  description: Return virtual desktop bounds.
+- name: get_cursor_position
+  description: Return the real cursor position for diagnostics.
+- name: click
+  description: Element-indexed or pixel-addressed left click.
+- name: double_click
+  description: Element-indexed or pixel-addressed double click.
+- name: right_click
+  description: Element-indexed or pixel-addressed right click.
+- name: type_text
+  description: Atomic text insertion through IA2/UIA/CDP/HWND routes.
+- name: type_text_chars
+  description: Compatibility wrapper for character-spaced text entry.
+- name: press_key
+  description: Single key press scoped to the target when possible.
+- name: hotkey
+  description: Modifier combination such as ["ctrl","c"].
+- name: scroll
+  description: Background-safe direction or wheel scroll where supported.
+- name: set_value
+  description: Direct UIA value/range setting for controls that expose safe setters.
+- name: browser_eval
+  description: Windows Chromium CDP Runtime.evaluate with userGesture=true.
+- name: page
+  description: macOS browser page/script helper for supported browser surfaces.
+- name: drag
+  description: macOS drag action for controls and canvas-like targets.
+- name: child_session_start
+  description: Windows-only no-activate child-session host probe.
+- name: child_session_status
+  description: Windows-only child-session support and host state.
+- name: child_session_stop
+  description: Windows-only child-session host stop.
+- name: appbroadcast_input_probe
+  description: Windows-only restricted AppBroadcast/InputInjector probe.
+- name: move_cursor
+  description: Move the visual overlay cursor without moving the real cursor.
+- name: get_agent_cursor_state
+  description: Return overlay visibility, palette, target, and motion state.
+- name: set_agent_cursor_enabled
+  description: Enable or disable the visual overlay.
+- name: set_agent_cursor_motion
+  description: Tune overlay glide, press, dwell, and idle-hide timing.
+- name: set_recording
+  description: Enable or disable trajectory recording.
+- name: get_recording_state
+  description: Return recorder state.
+- name: replay_trajectory
+  description: Replay recorded action.json calls in lexical order.
+- name: get_config
+  description: Return persistent config.
+- name: set_config
+  description: Set persistent config keys.
+- name: check_permissions
+  description: Report local automation and capture capability diagnostics.
