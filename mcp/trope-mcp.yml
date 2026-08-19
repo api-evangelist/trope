@@ -3,18 +3,14 @@ method: searched
 status: published
 source: https://github.com/tropeai/trope-cua
 docs: https://github.com/tropeai/trope-cua/blob/main/docs/reference-tools.md
-description: >-
-  Trope publishes Trope CUA, an open-source (MIT) MCP-native computer-use
-  agent for background desktop automation on Windows and macOS. It exposes
-  target-window screenshots, accessibility trees, action receipts, and
-  trajectory recording over an MCP stdio server, a long-running daemon, or
-  direct CLI calls. Distributed as source (no registry package); install via
-  the repository's platform installer scripts, then register with any MCP
-  client via `trope-cua mcp-config` or point the client at `trope-cua mcp`.
-  Mutating tools return structured action receipts with background_safe,
-  cursor_moved, and foreground_changed fields. Tool list captured verbatim
-  from docs/reference-tools.md. There is no hosted/remote MCP server for the
-  Trope ERP-implementation platform itself.
+description: Trope publishes Trope CUA, an open-source (MIT) MCP-native computer-use agent for background
+  desktop automation on Windows and macOS. It exposes target-window screenshots, accessibility trees,
+  action receipts, and trajectory recording over an MCP stdio server, a long-running daemon, or direct
+  CLI calls. Distributed as source (no registry package); install via the repository's platform installer
+  scripts, then register with any MCP client via `trope-cua mcp-config` or point the client at `trope-cua
+  mcp`. Mutating tools return structured action receipts with background_safe, cursor_moved, and foreground_changed
+  fields. Tool list captured verbatim from docs/reference-tools.md. There is no hosted/remote MCP server
+  for the Trope ERP-implementation platform itself.
 server:
   name: trope-cua
   transport: stdio
@@ -94,3 +90,9 @@ tools:
   description: Set persistent config keys.
 - name: check_permissions
   description: Report local automation and capture capability diagnostics.
+deployment:
+  mode: local-stdio
+  verified: searched
+  tools: 34
+  checked: '2026-08-12'
+  source: catalog MCP census
