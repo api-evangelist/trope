@@ -7,6 +7,17 @@ description: Trope is an AI-native platform that helps ERP implementation partne
   365 Business Central consultancies and other implementation teams. Trope also maintains
   Trope CUA, an open-source MCP-native computer-use agent for background desktop
   automation on Windows and macOS. Y Combinator Summer 2026 batch, based in San Francisco.
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
